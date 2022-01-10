@@ -48,16 +48,15 @@ axis[0].legend(loc='best')
 axis[0].set_title("Morning weight and Daily Minimum Weight")
 axis[0].set_xlabel("Date")
 axis[0].set_ylabel("Weight (kg)")
-# axis[0].xlabel("Date")
-# axis[0].ylabel("Weight (kg)")
-# axis[0].xticks(rotation='vertical')
 
-bins = [82,83,84,85,86]
-axis[1].hist(df.weight, bins=bins, edgecolor='k')
-bins2 = [82.5,83,83.5,84,84.5,85,85.5,86]
-axis[1].hist(df.weight, bins=bins2, edgecolor='k')
-bins2 = [82.25,82.5,82.75,83,83.25,83.5,83.75,84,84.25,84.5,84.75,85,85.25,85.5,85.75,86]
-axis[1].hist(df.weight, bins=bins2, edgecolor='k')
+#Create the histogram
+bins = np.arange(82,87,1)
+axis[1].hist(LowestWeightForEachDate.weight, bins=bins, edgecolor='k')
+bins = np.arange(82,87,0.5)
+axis[1].hist(LowestWeightForEachDate.weight, bins=bins, edgecolor='k')
+bins = np.arange(82,87,0.1)
+axis[1].hist(LowestWeightForEachDate.weight, bins=bins, edgecolor='k')
+
 axis[1].set_title("Distribution of All Measurements")
 axis[1].set_xlabel("Weight (kg)")
 axis[1].set_ylabel("Number of Occurances")
